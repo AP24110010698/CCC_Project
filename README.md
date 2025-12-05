@@ -1,182 +1,131 @@
-📘 Student Record Management System
 
-A complete C-based student management software with user authentication, role-based access, and file-based storage.
-This project demonstrates file handling, modular programming, user authentication, and data management in C.
-It is perfect for college mini-projects, file handling labs, and anyone learning C language.
+<h1 align="center">📘 Student Record Management System</h1>
 
-📑 Table of Contents
+<p align="center">
+A simple, lightweight, and powerful C-based project to manage student records using file handling and role-based access control.
+</p>
 
-Introduction
+---
 
-Features
+## 🚀 About the Project
+This **Student Record Management System** is a console application written in C to perform basic operations on student records such as:
 
-System Requirements
+- ➕ Add Student
+- 📋 Display All Students
+- 🔎 Search by Roll Number
+- ✏️ Update Student Data
+- ❌ Delete Student (Admin Only)
 
-Project Structure
+It uses **text files** for storage, making it easy to run on any system without database installation.
 
-How It Works
+---
 
-User Roles & Permissions
+## 🎯 Key Features
 
-Data File Formats
+### 🔐 Login System
+- Username & Password Authentication
+- Role-Based Access
 
-Compilation & Execution
+### 👥 User Roles
+Each user role has different permissions:
 
-Program Flowchart
+| Feature    | Admin | Staff | User | Guest |
+|-----------|:-----:|:-----:|:----:|:-----:|
+| Add       | ✔️     | ✔️     | ❌    | ❌     |
+| Display   | ✔️     | ✔️     | ✔️    | ✔️     |
+| Search    | ✔️     | ✔️     | ✔️    | ✔️     |
+| Update    | ✔️     | ✔️     | ❌    | ❌     |
+| Delete    | ✔️     | ❌     | ❌    | ❌     |
 
-Sample Screenshots
+### 📁 File Handling
+- `students.txt` → Student Database
+- `credentials.txt` → Login Credentials
 
-Future Enhancements
+---
 
-About The Project
+## 🏗️ Project Structure
 
-📖 Introduction
-
-The Student Record Management System is built to perform basic operations like:
-
-Adding student data
-
-Displaying all students
-
-Searching by roll number
-
-Updating an existing record
-
-Deleting a student record
-
-It uses text files for data storage instead of databases, making it easy to use anywhere.
-
-✨ Features
-🔐 Login System
-
-This project uses a username + password system.
-All credentials are stored in a file: credentials.txt.
-
-👥 Role-Based Access
-
-Multiple roles are supported.
-Each role has defined permissions.
-
-📁 File Handling
-
-Data is saved permanently using:
-
-students.txt → Student database
-
-credentials.txt → User credentials
-
-🧾 Student Operations
-
-Add Student
-
-Display All Students
-
-Search for a Student
-
-Update Student Information
-
-Delete a Student (Admin only)
-
-🖥 System Requirements
-
-Any OS: Windows, Linux, macOS
-
-GCC or a C compiler
-
-Terminal/Command Prompt
-
-📂 Project Structure
+```
 Student_Record_Management_System/
 │
-├── README.md               # Documentation
-├── student_app.c           # Main program source code
-├── credentials.txt         # Login details for users
-└── students.txt            # Student database
+├── README.md
+├── student_app.c
+├── credentials.txt
+└── students.txt
+```
 
-🔍 How It Works
-Program Flow
+---
 
-User runs the program
+## ⚙️ How It Works
 
-Login screen appears
+1️⃣ Start Program  
+2️⃣ Enter Username & Password  
+3️⃣ System Validates Login  
+4️⃣ Loads Appropriate Menu  
+5️⃣ Perform Operations  
+6️⃣ Save Data to File  
+7️⃣ Logout  
 
-Program checks credentials.txt
+---
 
-If login is correct → loads role menu
+## 🗂️ File Formats
 
-User performs allowed operations
-
-Data stored in students.txt
-
-Logout ends session
-
-👥 User Roles & Permissions
-Feature	Admin	Staff	User	Guest
-Add	✔	✔	✘	✘
-Display	✔	✔	✔	✔
-Search	✔	✔	✔	✔
-Update	✔	✔	✘	✘
-Delete	✔	✘	✘	✘
-
-📝 Data File Formats
-🔐 credentials.txt
+### 🔐 credentials.txt
+```
 username password role
-
-Example:
-
 admin admin123 admin
 staff staff123 staff
 user user123 user
 guest guest123 guest
+```
 
-🧾 students.txt
+### 🧾 students.txt
+```
 roll name marks
-
-Example:
-
 1 John 78.5
 2 Maya 88.0
 3 Alex 90.0
+```
 
-⚙ Compilation & Execution
-Compile
+---
+
+## 🛠️ Compilation & Execution
+
+### Compile:
+```sh
 gcc student_app.c -o student_app
+```
 
-Run
+### Run:
+```sh
 ./student_app
+```
 
-📊 Program Flowchart
-          ┌──────────────┐
-          │    START      │
-          └───────┬──────┘
-                  │
-        ┌─────────▼─────────┐
-        │   LOGIN SCREEN     │
-        └─────────┬─────────┘
-                  │Valid?
-      ┌───────────┴────────────┐
-      │         NO              │
-      │ "Invalid Login" Message │
-      └───────────┬────────────┘
-                  │YES
-        ┌─────────▼─────────┐
-        │ Load Role Menu     │
-        └─────────┬─────────┘
-                  ▼
-        ┌────────────────────┐
-        │ Perform Operations  │
-        └─────────┬─────────┘
-                  ▼
-          ┌──────────────┐
-          │    LOGOUT     │
-          └───────┬──────┘
-                  ▼
-          ┌──────────────┐
-          │     END       │
-          └──────────────┘
+---
 
-🖼 Sample Screenshots (Text Output)
-Login Screen
+## 🧠 Flowchart
+
+```
+START
+  |
+LOGIN
+  |
+VALID USER? -> NO -> Retry/Exit
+  |
+LOAD MENU
+  |
+OPERATIONS
+  |
+LOGOUT
+  |
+END
+```
+
+---
+
+## 🖥️ Sample Output
+
+```
 =====================================
        STUDENT RECORD SYSTEM
 =====================================
@@ -184,55 +133,28 @@ USERNAME : admin
 PASSWORD : admin123
 
 ✔ Login successful! Logged in as: admin
+```
 
-Admin Menu
-============== ADMIN MENU ==============
-1. Add Student
-2. Display All
-3. Search
-4. Update
-5. Delete
-6. Logout
+---
 
-Display Output
-ROLL    NAME            MARKS
---------------------------------
-1       John            78.50
-2       Maya            88.00
-3       Alex            90.00
+## 🌟 Future Enhancements
 
-🚀 Future Enhancements
+- ⭐ Hidden Password
+- ⭐ Sorting Options
+- ⭐ GUI Version
+- ⭐ CSV Export
+- ⭐ Color UI
+- ⭐ Statistics Dashboard
 
-Possible improvements:
+---
 
-Hide password input (****)
+## 🙌 Ideal For
 
-Sorting table (by marks/name/roll)
+- 🎓 Students Learning C
+- 🧪 File Handling Lab Projects
+- 🧠 Beginners in Programming
+- 🏫 Diploma/Degree Mini Projects
 
-Statistics (total students, average marks)
+---
 
-Backup system
-
-Pagination for long data
-
-GUI using Tkinter/Qt
-
-CSV export
-
-Colorful terminal UI
-
-Tell me if you want any of these features—I can add them.
-
-ℹ About This Project
-
-This project is best for:
-
-Computer Science students
-
-C programming course work
-
-Demonstrating file handling
-
-Mini projects for diploma/degree
-
-Easy to understand, modify, and submit.
+<p align="center"><b>Made with ❤️ in C</b></p>
